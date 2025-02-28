@@ -5,11 +5,11 @@
 
 class ListaEncadeada {
 public:
-    // Construtor e Destrutor
+    
     ListaEncadeada();
     ~ListaEncadeada();
 
-    // Métodos públicos
+   
     bool estaVazia() const;
     int obterTamanho() const;
     int obterElemento(int posicao) const;
@@ -21,7 +21,7 @@ public:
     void exibir() const;
 
 private:
-    // Estrutura do nó
+    
     struct Nodo {
         int valor;
         Nodo* proximo;
@@ -31,7 +31,7 @@ private:
     Nodo* inicio; // Ponteiro para o início da lista
     int tamanho;  // Tamanho da lista
 
-    // Métodos privados
+   
     bool inserirMeio(int posicao, int valor);
     void removerInicio();
     void removerMeio(int posicao);
