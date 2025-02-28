@@ -28,8 +28,8 @@ private:
         Nodo(int v) : valor(v), proximo(nullptr) {}
     };
 
-    Nodo* inicio; // Ponteiro para o início da lista
-    int tamanho;  // Tamanho da lista
+    Nodo* inicio; 
+    int tamanho;  
 
    
     bool inserirMeio(int posicao, int valor);
