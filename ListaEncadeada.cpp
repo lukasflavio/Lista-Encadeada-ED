@@ -1,26 +1,26 @@
 #include "ListaEncadeada.h"
 
-// Construtor
+
 ListaEncadeada::ListaEncadeada() : inicio(nullptr), tamanho(0) {}
 
-// Destrutor
+
 ListaEncadeada::~ListaEncadeada() {
     while (!estaVazia()) {
         removerInicio();
     }
 }
 
-// Verifica se a lista está vazia
+
 bool ListaEncadeada::estaVazia() const {
     return tamanho == 0;
 }
 
-// Retorna o tamanho da lista
+
 int ListaEncadeada::obterTamanho() const {
     return tamanho;
 }
 
-// Obtém o valor de um elemento em uma posição específica
+
 int ListaEncadeada::obterElemento(int posicao) const {
     if (posicao < 1 || posicao > tamanho || estaVazia()) {
         return -1;  // Retorna -1 para indicar erro
@@ -33,7 +33,7 @@ int ListaEncadeada::obterElemento(int posicao) const {
     return atual->valor;
 }
 
-// Altera o valor de um elemento em uma posição específica
+
 bool ListaEncadeada::alterarElemento(int posicao, int valor) {
     if (posicao < 1 || posicao > tamanho || estaVazia()) {
         return false;
@@ -47,7 +47,7 @@ bool ListaEncadeada::alterarElemento(int posicao, int valor) {
     return true;
 }
 
-// Insere um elemento no início da lista
+
 bool ListaEncadeada::inserirInicio(int valor) {
     Nodo* novoNodo = new Nodo(valor);
     novoNodo->proximo = inicio;
@@ -56,7 +56,7 @@ bool ListaEncadeada::inserirInicio(int valor) {
     return true;
 }
 
-// Insere um elemento no fim da lista
+
 bool ListaEncadeada::inserirFim(int valor) {
     if (estaVazia()) {
         return inserirInicio(valor);
@@ -72,7 +72,7 @@ bool ListaEncadeada::inserirFim(int valor) {
     return true;
 }
 
-// Insere um elemento no meio da lista
+
 bool ListaEncadeada::inserirMeio(int posicao, int valor) {
     Nodo* novoNodo = new Nodo(valor);
     Nodo* atual = inicio;
@@ -87,7 +87,7 @@ bool ListaEncadeada::inserirMeio(int posicao, int valor) {
     return true;
 }
 
-// Insere um elemento em uma posição específica
+
 bool ListaEncadeada::inserir(int posicao, int valor) {
     if (posicao < 1 || posicao > tamanho + 1) {
         return false;
@@ -102,7 +102,7 @@ bool ListaEncadeada::inserir(int posicao, int valor) {
     }
 }
 
-// Remove o primeiro elemento da lista
+
 void ListaEncadeada::removerInicio() {
     if (estaVazia()) {
         return;
@@ -114,7 +114,7 @@ void ListaEncadeada::removerInicio() {
     tamanho--;
 }
 
-// Remove um elemento do meio da lista
+
 void ListaEncadeada::removerMeio(int posicao) {
     Nodo* atual = inicio;
     Nodo* anterior = nullptr;
@@ -129,7 +129,7 @@ void ListaEncadeada::removerMeio(int posicao) {
     tamanho--;
 }
 
-// Remove um elemento em uma posição específica
+
 int ListaEncadeada::remover(int posicao) {
     if (posicao < 1 || posicao > tamanho || estaVazia()) {
         return -1;  // Retorna -1 para indicar erro
@@ -152,7 +152,7 @@ int ListaEncadeada::remover(int posicao) {
     return valorRemovido;
 }
 
-// Exibe todos os elementos da lista
+
 void ListaEncadeada::exibir() const {
     Nodo* atual = inicio;
     while (atual != nullptr) {
